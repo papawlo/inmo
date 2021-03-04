@@ -1,0 +1,28 @@
+{
+  "colors": {
+    "primary": "#9F14D0",
+    "secondary": "#14B8A6",
+    "primary-light": "#9B51E0",
+    "gray": "#828282",
+    "nav-gray": "#BDBDBD",
+    "blip": "#56CCF2",
+    "wa": "#6FCF97",
+    "fb": "#2F80ED",
+    "gray-light": "#F3F3F3",
+    "gray-darken": "#4F4F4F",
+    "gray-dark": "#5D6970",
+    "dark": "#2a2a2a",
+    "grayish": "#CDD1D4"
+  },
+  "fontSizes": {
+    "xs": ["10px"],
+    "sm": ["14px"],
+    "base": ["18px"],
+    "lg": ["18px"],
+    "xl": ["36px"],
+    "2xl": ["120px", "109px"]
+  },
+  "fontFamily": {
+    "sans": ["Roboto", "sans-serif"]
+  }
+}
