@@ -31852,42 +31852,45 @@ video {
   font-family: "Roboto", sans-serif;
 } */
 
-.entry-content h1 {
-    font-size: 120px;
-    line-height: 109px;
+/* .entry-content {
+  h1 {
+    @apply text-2xl;
   }
 
-.entry-content h2 {
-    font-size: 36px;
+  h2 {
+    @apply text-xl;
   }
 
-.entry-content h3 {
-    font-size: 18px;
+  h3 {
+    @apply text-lg;
   }
 
-.entry-content p, .entry-content ul, .entry-content ol {
-    margin-bottom: 2rem;
-  }
+  p,
+  ul,
+  ol {
+    @apply mb-8;
 
-.entry-content p a, .entry-content ul a, .entry-content ol a {
-      --tw-text-opacity: 1;
-      color: rgba(59, 130, 246, var(--tw-text-opacity));
-      text-decoration: underline;
-    }
+    a {
+      @apply text-blue-500 underline;
 
-.entry-content p a:hover, .entry-content ul a:hover, .entry-content ol a:hover {
-        text-decoration: none;
+      &:hover {
+        @apply no-underline;
       }
-
-.entry-content ul li {
-      list-style-position: inside;
-      list-style-type: disc;
     }
+  }
 
-.entry-content ol li {
-      list-style-position: inside;
-      list-style-type: decimal;
+  ul {
+    li {
+      @apply list-disc list-inside;
     }
+  }
+
+  ol {
+    li {
+      @apply list-decimal list-inside;
+    }
+  }
+}  */
 
 #inicio {
   background: linear-gradient(242.73deg, #542aa5 0%, #9f14d0 100.66%);
@@ -31904,6 +31907,44 @@ h2 {
 
 h3 {
   font-size: 18px;
+}
+
+.text-js {
+  opacity: 0;
+}
+
+.cursor {
+  display: block;
+  position: absolute;
+  height: 50%;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  /* Change colour of Cursor Here */
+  background-color: white;
+  z-index: 1;
+  -webkit-animation: flash 0.5s none infinite alternate;
+          animation: flash 0.5s none infinite alternate;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (min-width: 480px) {

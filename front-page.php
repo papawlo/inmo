@@ -67,8 +67,8 @@
                 </div>
             </div>
         </header>
-        <div class="flex flex-col justify-center items-center mx-auto container">
-            <h1 class="text-2xl font-bold text-center mt-8 text-white">Olá, é bom receber você aqui</h1>
+        <div class="flex flex-col justify-center items-center mx-auto container type-js">
+            <h1 class="text-2xl font-bold text-center mt-8 text-white text-js">Olá, é bom receber você aqui</h1>
             <p class="mt-10 text-base text-center leading-10 tracking-wide">
                 Nós somos a Inmo, estamos aqui para ajudar você na construção do seu
                 chatbot.

@@ -115,7 +115,7 @@ function tailpress_setup()
 	$colors = array_map(function ($color, $hex) {
 		return array(
 			'name'  => ucfirst($color),
-			'slug'  => $color,
+			'slug'  => $color . "-text",
 			'color' => $hex,
 		);
 	}, array_keys($tailpress['colors']), $tailpress['colors']);
@@ -123,13 +123,37 @@ function tailpress_setup()
 	$font_sizes = array_map(function ($size, $px) {
 		return array(
 			'name' => ucfirst($size),
-			'size' => $px,
+			'size' => is_array($px) ? $px[0] : $px,
 			'slug' => $size
 		);
 	}, array_keys($tailpress['fontSizes']), $tailpress['fontSizes']);
 
+
+	// echo "<!--";
+	// print_r($colors);
+	// echo "-->";
 	add_theme_support('editor-color-palette', $colors);
 	add_theme_support('editor-font-sizes', $font_sizes);
+
+	/**
+	 * Add support for custom color palettes in Gutenberg.
+	 */
+
+	// add_theme_support(
+	// 	'editor-color-palette',
+	// 	array(
+	// 		array(
+	// 			'name'  => esc_html__('Black', 'tailpress'),
+	// 			'slug' => 'black',
+	// 			'color' => '#2a2a2a',
+	// 		),
+	// 		array(
+	// 			'name'  => esc_html__('Gray', 'tailpress'),
+	// 			'slug' => 'gray',
+	// 			'color' => '#727477',
+	// 		)
+	// 	)
+	// );
 }
 
 add_action('after_setup_theme', 'tailpress_setup');

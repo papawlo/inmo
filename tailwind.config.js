@@ -49,6 +49,7 @@ module.exports = {
       const editorColorText = _.map(
         config("tailpress.colors", {}),
         (value, key) => {
+          console.log(value, key);
           return {
             [`.has-${key}-text-color`]: {
               color: value,
