@@ -69,18 +69,6 @@ function tailpress_setup()
 		)
 	);
 
-	// Switch default core markup for search form, comment form, and comments
-	// to output valid HTML5.
-	// add_theme_support(
-	// 	'html5',
-	// 	array(
-	// 		'search-form',
-	// 		'comment-form',
-	// 		'comment-list',
-	// 		'gallery',
-	// 		'caption',
-	// 	)
-	// );
 
 	// Adding Thumbnail basic support.
 	// add_theme_support('post-thumbnails');
@@ -128,32 +116,8 @@ function tailpress_setup()
 		);
 	}, array_keys($tailpress['fontSizes']), $tailpress['fontSizes']);
 
-
-	// echo "<!--";
-	// print_r($colors);
-	// echo "-->";
 	add_theme_support('editor-color-palette', $colors);
 	add_theme_support('editor-font-sizes', $font_sizes);
-
-	/**
-	 * Add support for custom color palettes in Gutenberg.
-	 */
-
-	// add_theme_support(
-	// 	'editor-color-palette',
-	// 	array(
-	// 		array(
-	// 			'name'  => esc_html__('Black', 'tailpress'),
-	// 			'slug' => 'black',
-	// 			'color' => '#2a2a2a',
-	// 		),
-	// 		array(
-	// 			'name'  => esc_html__('Gray', 'tailpress'),
-	// 			'slug' => 'gray',
-	// 			'color' => '#727477',
-	// 		)
-	// 	)
-	// );
 }
 
 add_action('after_setup_theme', 'tailpress_setup');
@@ -209,3 +173,26 @@ add_filter('nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class',
 // For dev
 /* Disable WordPress Admin Bar for all users */
 add_filter('show_admin_bar', '__return_false');
+
+
+// Menu shortcode
+function print_menu_shortcode($atts, $content = null) {
+    extract(shortcode_atts(array( 'name' => null, ), $atts));
+    return
+		// wp_nav_menu( array( 'menu' => $name, 'echo' => false ) );
+		wp_nav_menu(
+				array(
+					  'menu' => $name,
+						'echo' => false,
+						'container_id'    => 'primary-menu',
+						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+						'menu_class'      => 'lg:flex lg:-mx-4',
+						'theme_location'  => 'primary',
+						'li_class'        => 'lg:mx-4 text-nav-gray',
+						'fallback_cb'     => false,
+				)
+		);
+
+}
+add_shortcode('menu', 'print_menu_shortcode');
+// USe: [menu name="main-menu"]
