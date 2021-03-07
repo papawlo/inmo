@@ -1,3 +1,9 @@
+<?php
+/*
+ * Template Name: Front Page
+ * description: Landing Page V1
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -7,14 +13,14 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" /> -->
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class('bg-white text-white antialiased'); ?>>
 
     <?php do_action('tailpress_site_before'); ?>
-    <section id="inicio" class="min-h-screen flex flex-col">
+    <section id="inicio" class="inicio min-h-screen flex flex-col">
         <header>
             <div class="mx-auto container">
                 <div class="lg:flex lg:justify-between lg:items-center py-6">
@@ -67,8 +73,8 @@
                 </div>
             </div>
         </header>
-        <div class="flex flex-col justify-center items-center mx-auto container type-js">
-            <h1 class="text-2xl font-bold text-center mt-8 text-white text-js">Olá, é bom receber você aqui</h1>
+        <div class="flex flex-col justify-center items-center mx-auto container">
+            <h1 class="text-2xl font-bold text-center mt-8 text-white">Olá, é bom receber você aqui</h1>
             <p class="mt-10 text-base text-center leading-10 tracking-wide">
                 Nós somos a Inmo, estamos aqui para ajudar você na construção do seu
                 chatbot.
@@ -78,8 +84,8 @@
                 Converse com o <i>Mô</i>, o robô que criamos para entender a sua
                 necessidade ;)
             </p>
-            <button class="bg-white px-12 py-8 rounded-full text-primary mt-6">FALAR COM MÔ</button>
-            <a href="#" class="mt-5 mb-4">Falar no WhatsApp</a>
+            <button class="bg-white px-12 py-8 rounded-full text-primary mt-6 border-none">FALAR COM MÔ</button>
+            <a href="#" class="mt-5 mb-4 text-white no-underline">Falar no WhatsApp</a>
         </div>
     </section>
     <section id="quem-somos" class="bg-white py-8">
@@ -98,7 +104,6 @@
                     </p>
                 </div>
                 <div class="w-full sm:w-1/2 p-6">
-
                     <img class="mx-auto" src="<?php echo get_template_directory_uri() ?>/img/happy-bunch.png" alt="" width="312" height="400" />
                 </div>
             </div>
@@ -186,13 +191,13 @@
             <p class="mt-10 text-base text-center leading-10 tracking-wide text-gray">
                 A forma mais rápida de entrar em contato conosco e obter informações específicas para o seu projeto de chatbots é conversando com o Mô. Mas, caso prefira, você pode solicitar contato pelo nosso WhatsApp.
             </p>
-            <button class="bg-primary px-12 py-8 rounded-full text-white mt-16">FALAR COM MÔ</button>
-            <a href="#" class="mt-5 mb-4 text-gray">Falar no WhatsApp</a>
+            <button class="bg-primary px-12 py-8 rounded-full text-white mt-16 border-none">FALAR COM MÔ</button>
+            <a href="#" class="mt-5 mb-4 text-gray no-underline">Falar no WhatsApp</a>
         </div>
 
     </section>
 
-    <div id="rodape" class="bg-dark pt-24 pb-16">
+    <!-- <footer id="rodape" class="bg-dark pt-24 pb-16">
         <div class="container max-w-6xl mx-auto m-8">
             <div class="flex flex-col justify-center items-center">
                 <img class="" src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt="" class="logo" />
@@ -218,7 +223,62 @@
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
+</body>
+
+</html> -->
+
+
+    <?php do_action('tailpress_content_end'); ?>
+
+
+    <?php do_action('tailpress_content_after'); ?>
+    <footer id="rodape" class="bg-dark pt-24 pb-16" role="contentinfo">
+        <?php do_action('tailpress_footer'); ?>
+        <div class="container max-w-6xl mx-auto m-8">
+            <div class="flex flex-col justify-center items-center">
+                <img class="" src="http://localhost/wp-inmo/wp-content/uploads/2021/03/logo.png" alt="">
+                <p class="w-36 text-xs text-center mt-2">Feito com ❤ em Belo Horizonte CNPJ 38.266.091/0001-84</p>
+
+
+            </div>
+            <div class="w-full mt-16 mb-12">
+                <div class="h-px bg-grayish"></div>
+            </div>
+            <div class="flex">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'container'    => 'nav',
+                        'container_class' => 'w-1/2',
+                        'menu_class'      => 'flex justify-between text-gray text-sm',
+                        'theme_location'  => 'footer',
+                        'li_class'        => '',
+                        'fallback_cb'     => false,
+                    )
+                );
+                ?>
+                <!-- <nav class="w-1/2">
+				<ul class="flex justify-between text-gray text-sm">
+					<li><a href="#">Início</a></li>
+					<li><a href="#">Quem somos</a></li>
+					<li><a href="#">Nossos serviços</a></li>
+					<li><a href="#">Política de privacidade</a></li>
+					<li><a href="#">Contato</a></li>
+				</ul>
+			</nav> -->
+                <div class="flex justify-end w-1/2">
+                    <a href="<?php the_field('link-facebook'); ?>" target="_blank" class="w-auto mx-4" title="Facebook"><img src="http://localhost/wp-inmo/wp-content/uploads/2021/03/facebook.svg" alt=""></a>
+                    <a href="<?php the_field('link-linkedin'); ?>" target="_blank" class="w-auto mx-4" title="LinkedIn"><img src="http://localhost/wp-inmo/wp-content/uploads/2021/03/linkedin.svg" alt=""></a>
+                    <a href="<?php the_field('link-instagram'); ?>" target="_blank" class="w-auto ml-4" title="Instagram"><img src="http://localhost/wp-inmo/wp-content/uploads/2021/03/instagram.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <?php wp_footer(); ?>
+
 </body>
 
 </html>

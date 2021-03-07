@@ -1,3 +1,9 @@
+<?php
+/*
+ * Template Name: Test
+ * description: Landing Page V1
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -68,9 +74,51 @@
     /* Start the Loop */
     while (have_posts()) :
         the_post();
-        get_template_part('template-parts/content/content-page');
+        the_content();
     endwhile; // End of the loop.
     ?>
+
+    <?php do_action('tailpress_content_end'); ?>
+
+    <?php do_action('tailpress_content_after'); ?>
+    <footer id="rodape" class="bg-dark pt-24 pb-16" role="contentinfo">
+        <?php do_action('tailpress_footer'); ?>
+        <div class="container max-w-6xl mx-auto m-8">
+            <div class="flex flex-col justify-center items-center">
+                <img class="" src="http://localhost/wp-inmo/wp-content/uploads/2021/03/logo.png" alt="">
+                <p class="w-36 text-xs text-center mt-2">Feito com ❤ em Belo Horizonte CNPJ 38.266.091/0001-84</p>
+
+
+            </div>
+            <div class="w-full mt-16 mb-12">
+                <div class="h-px bg-grayish"></div>
+            </div>
+            <div class="flex">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'container'    => 'nav',
+                        'container_class' => 'w-1/2',
+                        'menu_class'      => 'flex justify-between text-gray text-sm',
+                        'theme_location'  => 'footer',
+                        'li_class'        => '',
+                        'fallback_cb'     => false,
+                    )
+                );
+                ?>
+
+                <div class="flex justify-end w-1/2">
+                    <a href="<?php the_field('link-facebook'); ?>" target="_blank" class="w-auto mx-4" title="Facebook"><img src="http://localhost/wp-inmo/wp-content/uploads/2021/03/facebook.svg" alt=""></a>
+                    <a href="<?php the_field('link-linkedin'); ?>" target="_blank" class="w-auto mx-4" title="LinkedIn"><img src="http://localhost/wp-inmo/wp-content/uploads/2021/03/linkedin.svg" alt=""></a>
+                    <a href="<?php the_field('link-instagram'); ?>" target="_blank" class="w-auto ml-4" title="Instagram"><img src="http://localhost/wp-inmo/wp-content/uploads/2021/03/instagram.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <?php wp_footer(); ?>
+
 </body>
 
 </html>

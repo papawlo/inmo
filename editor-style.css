@@ -31339,7 +31339,11 @@
   }
 }  */
 
-#inicio {
+html {
+  scroll-behavior: smooth;
+}
+
+.inicio {
   background: linear-gradient(242.73deg, #542aa5 0%, #9f14d0 100.66%);
 }
 
