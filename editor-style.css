@@ -31303,9 +31303,9 @@
   color: #718096;
 }
 
-/* body {
+body {
   font-family: "Roboto", sans-serif;
-} */
+}
 
 /* .entry-content {
   h1 {
@@ -31407,6 +31407,15 @@ h3 {
 
 .fade {
   opacity: 1;
+}
+
+.entry-content.entry-content-not-custom p {
+  padding-bottom: 0.75rem;
+}
+
+.entry-content.entry-content-not-custom h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .block-editor__typewriter {

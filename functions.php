@@ -66,6 +66,7 @@ function tailpress_setup()
 		array(
 			'primary' => __('Primary Menu', 'tailpress'),
 			'footer' => __('Footer Menu', 'tailpress'),
+			'social' => __('Social Menu', 'tailpress'),
 		)
 	);
 

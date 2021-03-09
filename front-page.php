@@ -12,7 +12,38 @@
 </head>
 
 <body <?php body_class('bg-white text-white antialiased font-sans'); ?>>
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+  </script>
+  <script>
+    (function () {
+        window.onload = function () {
+          var blipClient = new BlipChat()
+          .withAppKey('aW5tb3JvdXRlcjplODg3YzVhYS04NzkwLTQwMzktYmJiZS05YzUyNDczNDgxNjI=')
+          .withButton({"color":"#6021B4","icon":""})
+          .withCustomCommonUrl('https://chat.blip.ai/')
+          .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+              blipClient.sendMessage({
+                  "type": "text/plain",
+                  "content": "Start"
+              });
+          });
+          blipClient.build();
 
+          jQuery("#takebot").click(function(){
+              jQuery("#blip-chat-open-iframe").click();
+              return false;
+          });
+          jQuery("#takebot-footer").click(function(){
+              jQuery("#blip-chat-open-iframe").click();
+              return false;
+          });
+        }
+
+
+    })();
+
+
+  </script>
     <?php do_action('tailpress_site_before'); ?>
 
     <section id="inicio" class="min-h-screen flex flex-col">
@@ -79,8 +110,8 @@
                 Converse com o <i>Mô</i>, o robô que criamos para entender a sua
                 necessidade ;)
             </p>
-            <button class="bg-white px-12 py-8 rounded-full text-primary mt-6 focus:ring-4 focus:ring-purple-500 focus:outline-none text-base">FALAR COM MÔ</button>
-            <a href="#" class="mt-5 mb-4">Falar no WhatsApp</a>
+            <button id="takebot" class="bg-white px-12 py-8 rounded-full text-primary mt-6 focus:ring-4 focus:ring-purple-500 focus:outline-none text-base">FALAR COM MÔ</button>
+            <a href="http://wa.me/553194370162" target="_blank" class="mt-5 mb-4">Falar no WhatsApp</a>
         </div>
     </section>
     <!-- Bloco 1 - Quem Somos -->
@@ -112,7 +143,7 @@
         <div class="container max-w-6xl sm:p-8 mx-auto">
 
             <h2 class="text-primary w-full mb-10 font-bold leading-tight">NOSSOS SERVIÇOS COM BOTS</h2>
-            <h3 class="text-gray mt-4">Alguns dos nossos serviços mais</h3>
+            <h3 class="text-gray mt-4">Alguns dos nossos serviços mais solicitados:</h3>
             <div class="servicos flex flex-wrap mt-12">
 
                 <div class="servico fade w-full sm:w-1/2 md:w-1/4 p-6 flex flex-col flex-grow flex-shrink items-center">
@@ -145,17 +176,19 @@
     <!-- Bloco 2 - nossos serviços // FIM -->
 
     <!-- Bloco 3 - nossos clientes -->
-    <section id="nossos-clientes" class="bg-white py-24">
+    <section id="nossos-clientes" class="bg-white pt-24 pb-12">
         <div class="container max-w-6xl sm:p-8 mx-auto">
             <div class="flex flex-wrap">
                 <div class="w-full sm:w-1/2 pr-6">
-
                     <h2 class="text-primary mb-10 font-bold">Quem já está conosco</h2>
-                    <p class="text-gray w-full sm:w-5/6">
+                    <p class="text-gray w-full">
                         Separamos alguns de nossos parceiros que nos ajudam a contar a nossa
                         história e que já usam chatbots em suas operações;
                     </p>
-                    <img class="w-auto ml-14 mt-14 hidden sm:inline-block fade" src="<?php echo get_template_directory_uri() ?>/img/party-time.png" />
+                    <div class="w-auto ml-14 mt-14 hidden sm:inline-block fade">
+
+                      <img  src="<?php echo get_template_directory_uri() ?>/img/party-time.png" />
+                    </div>
                 </div>
                 <div class="w-full sm:w-1/2 pt-16 sm:pt-0 pl-6 fade">
                     <img src="<?php echo get_template_directory_uri() ?>/img/clients.png" alt="" />
@@ -206,8 +239,8 @@
             <p class="mt-10 text-base text-center leading-tight text-gray">
                 A forma mais rápida de entrar em contato conosco e obter informações específicas para o seu projeto de chatbots é conversando com o Mô. Mas, caso prefira, você pode solicitar contato pelo nosso WhatsApp.
             </p>
-            <button class="bg-primary px-12 py-8 rounded-full text-white mt-16 text-base focus:ring-4 focus:ring-purple-500 focus:outline-none">FALAR COM MÔ</button>
-            <a href="#" class="mt-5 mb-4 text-gray">Falar no WhatsApp</a>
+            <button id="takebot-footer" class="bg-primary px-12 py-8 rounded-full text-white mt-16 text-base focus:ring-4 focus:ring-purple-500 focus:outline-none">FALAR COM MÔ</button>
+            <a href="http://wa.me/553194370162" target="_blank" class="mt-5 mb-4 text-gray">Falar no WhatsApp</a>
         </div>
     </section>
     <!-- Bloco 5 - Contato // FIM -->
@@ -222,26 +255,29 @@
             <div class="w-full mt-16 mb-12">
                 <div class="h-px bg-grayish"></div>
             </div>
-            <div class="flex">
-                <nav class="w-1/2">
-                    <ul class="flex justify-between text-gray text-sm">
-                        <li><a href="#">Início</a></li>
-                        <li><a href="#">Quem somos</a></li>
-                        <li><a href="#">Nossos serviços</a></li>
-                        <li><a href="#">Política de privacidade</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </nav>
-                <div class="flex justify-end w-1/2">
-                    <a href="#" class="w-auto mx-4"><img src="<?php echo get_template_directory_uri() ?>/img/facebook.svg" alt="" /></a>
-                    <a href="#" class="w-auto mx-4"><img src="<?php echo get_template_directory_uri() ?>/img/linkedin.svg" alt="" /></a>
-                    <a href="#" class="w-auto ml-4"><img src="<?php echo get_template_directory_uri() ?>/img/instagram.svg" alt="" /></a>
+            <div class="flex flex-wrap">
+              <nav class="w-full sm:w-1/2 pb-10 sm:pb-0">
+                  <?php
+                  wp_nav_menu(
+                      array(
+                          'container_id'    => 'footer-menu',
+                          'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+                          'menu_class'      => 'lg:flex lg:-mx-4',
+                          'theme_location'  => 'footer',
+                          'li_class'        => 'lg:mx-4 text-nav-gray',
+                          'fallback_cb'     => false,
+                      )
+                  );
+                  ?>
+              </nav>
+                <div class="flex justify-center sm:justify-end w-full sm:w-1/2">
+                    <!-- <a href="#" class="w-auto mx-4"><img src="<?php echo get_template_directory_uri() ?>/img/facebook.svg" alt="" /></a> -->
+                    <a href="https://br.linkedin.com/company/inmoworks" target="_blank" class="w-auto mx-4"><img src="<?php echo get_template_directory_uri() ?>/img/linkedin.svg" alt="" /></a>
+                    <!-- <a href="#" class="w-auto ml-4"><img src="<?php echo get_template_directory_uri() ?>/img/instagram.svg" alt="" /></a> -->
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- Footer -->
 </body>

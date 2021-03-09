@@ -1,6 +1,6 @@
-/* body {
+body {
   font-family: "Roboto", sans-serif;
-} */
+}
 /* .entry-content {
   h1 {
     @apply text-2xl;
@@ -86,4 +86,15 @@ h3 {
 
 .fade {
   opacity: 1;
+}
+
+
+
+.entry-content.entry-content-not-custom p {
+  @apply pb-3;
+}
+
+.entry-content.entry-content-not-custom h3 {
+  @apply mt-2;
+  @apply mb-2;
 }

@@ -7,44 +7,13 @@
   \*****************************/
 /***/ (() => {
 
-function autoType(elementClass, typingSpeed) {
-  var thhis = jQuery(elementClass);
-  thhis.css({// position: "relative",
-    // display: "inline-block",
-  }); // thhis.prepend(
-  //   '<div class="cursor" style="right: initial; left:0;"></div>'
-  // );
-
-  thhis = thhis.find(".text-js");
-  var text = thhis.text().trim().split("");
-  var amntOfChars = text.length;
-  var newString = "";
-  thhis.text("|");
-  setTimeout(function () {
-    thhis.css("opacity", 1);
-    thhis.prev().removeAttr("style");
-    thhis.text("");
-
-    for (var i = 0; i < amntOfChars; i++) {
-      (function (i, _char) {
-        setTimeout(function () {
-          newString += _char;
-          thhis.text(newString);
-        }, i * typingSpeed);
-      })(i + 1, text[i]);
-    }
-  }, 1500);
-}
-
 jQuery(document).ready(function ($) {
   // Navigation toggle
   var main_navigation = jQuery('#primary-menu');
   jQuery('#primary-menu-toggle').on('click', function (e) {
     e.preventDefault();
     main_navigation.toggleClass('hidden');
-  }); // Animation
-  // autoType(".type-js", 200);
-
+  });
   $(window).on("load", function () {
     $(window).scroll(function () {
       var windowBottom = $(this).scrollTop() + $(this).innerHeight();
