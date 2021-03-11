@@ -24,7 +24,23 @@
 <div id="rodape" class="bg-dark pt-24 pb-16">
 		<div class="container max-w-6xl sm:p-8 mx-auto">
 				<div class="flex flex-col justify-center items-center">
-						<img class="" src="<?php echo get_template_directory_uri() ?>/img/logo.png" alt="" class="logo" />
+					<?php if (has_custom_logo()) { ?>
+							<a href="<?php echo get_bloginfo('url'); ?>">
+									<?php the_custom_logo(); ?>
+							</a>
+
+					<?php } else { ?>
+							<div class="text-lg uppercase">
+									<a href="<?php echo get_bloginfo('url'); ?>" class="font-extrabold text-lg uppercase">
+											<?php echo get_bloginfo('name'); ?>
+									</a>
+							</div>
+
+							<p class="text-sm font-light">
+									<?php echo get_bloginfo('description'); ?>
+							</p>
+
+					<?php } ?>
 						<p class="w-36 text-xs text-center mt-2">Feito com ❤ em Belo Horizonte CNPJ 38.266.091/0001-84</p>
 				</div>
 				<div class="w-full mt-16 mb-12">

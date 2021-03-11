@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying all single posts
+ * Template Name: Homepage
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -14,9 +14,9 @@ get_header('empty');
 /* Start the Loop */
 while (have_posts()) :
     the_post();
-    get_template_part('template-parts/content/content-page');
+    get_template_part('template-parts/content/content-home');
 
 
 endwhile; // End of the loop.
 
-get_footer('empty');
+get_footer();
