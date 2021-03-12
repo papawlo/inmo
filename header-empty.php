@@ -11,5 +11,36 @@
 </head>
 
 <body <?php body_class('bg-white text-white antialiased font-sans'); ?>>
+  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+  </script>
+  <script>
+    (function () {
+        window.onload = function () {
+          var blipClient = new BlipChat()
+          .withAppKey('aW5tb3JvdXRlcjplODg3YzVhYS04NzkwLTQwMzktYmJiZS05YzUyNDczNDgxNjI=')
+          .withButton({"color":"#6021B4","icon":""})
+          .withCustomCommonUrl('https://chat.blip.ai/')
+          .withEventHandler(BlipChat.CREATE_ACCOUNT_EVENT, function () {
+              blipClient.sendMessage({
+                  "type": "text/plain",
+                  "content": "Start"
+              });
+          });
+          blipClient.build();
 
+          jQuery("#takebot").click(function(){
+              jQuery("#blip-chat-open-iframe").click();
+              return false;
+          });
+          jQuery("#takebot-footer").click(function(){
+              jQuery("#blip-chat-open-iframe").click();
+              return false;
+          });
+        }
+
+
+    })();
+
+
+  </script>
     <?php do_action('tailpress_site_before'); ?>
