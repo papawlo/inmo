@@ -66,21 +66,10 @@ function tailpress_setup()
 		array(
 			'primary' => __('Primary Menu', 'tailpress'),
 			'footer' => __('Footer Menu', 'tailpress'),
+			'social' => __('Social Menu', 'tailpress'),
 		)
 	);
 
-	// Switch default core markup for search form, comment form, and comments
-	// to output valid HTML5.
-	// add_theme_support(
-	// 	'html5',
-	// 	array(
-	// 		'search-form',
-	// 		'comment-form',
-	// 		'comment-list',
-	// 		'gallery',
-	// 		'caption',
-	// 	)
-	// );
 
 	// Adding Thumbnail basic support.
 	// add_theme_support('post-thumbnails');
@@ -128,10 +117,6 @@ function tailpress_setup()
 		);
 	}, array_keys($tailpress['fontSizes']), $tailpress['fontSizes']);
 
-
-	// echo "<!--";
-	// print_r($colors);
-	// echo "-->";
 	add_theme_support('editor-color-palette', $colors);
 	add_theme_support('editor-font-sizes', $font_sizes);
 	add_theme_support( 'custom-units','px', 'rem', 'em' );
@@ -280,11 +265,12 @@ function inmo_menu_shortcode($attr){
 			array(
 				'menu'             => $args['name'],
 				// 'container_id'    => 'primary-menu',
-				'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+				'container_class' => 'mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 				'menu_class'      => 'lg:flex lg:-mx-4',
-				'theme_location'  => 'primary',
-				'li_class'        => 'lg:mx-4',
+				// 'theme_location'  => 'primary',
+				'li_class'        => 'lg:mx-4 text-nav-gray',
 				'fallback_cb'     => false,
+				'echo' => false,
 		)
 		);
 }

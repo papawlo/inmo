@@ -13,7 +13,7 @@
 
 	<?php else : ?>
 
-		<div class="entry-content">
+		<div class="entry-content entry-content-not-custom text-gray container max-w-5xl mx-auto m-8 px-10">
 			<?php
 			/* translators: %s: Name of current post */
 			the_content(

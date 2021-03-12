@@ -557,9 +557,9 @@ video {
   padding-left: 1rem;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 640px) {
   .container {
-    max-width: 480px;
+    max-width: 640px;
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -11769,9 +11769,12 @@ video {
   font-size: 36px;
 }
 
+.text-1xl {
+  font-size: 79px;
+}
+
 .text-2xl {
   font-size: 120px;
-  line-height: 109px;
 }
 
 .leading-3 {
@@ -14201,7 +14204,7 @@ video {
 }
 
 .max-w-screen-sm {
-  max-width: 480px;
+  max-width: 640px;
 }
 
 .max-w-screen-md {
@@ -31782,7 +31785,7 @@ video {
   display: block;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 640px) {
   .alignleft:not(.wp-block-button) {
     margin-right: 0.5rem;
     float: left;
@@ -31829,9 +31832,14 @@ video {
   font-weight: normal;
 }
 
+.has-1xl-font-size {
+  font-size: 79px;
+  font-weight: normal;
+}
+
 .has-2xl-font-size {
   font-size: 120px;
-  font-weight: 109px;
+  font-weight: normal;
 }
 
 .wp-caption {
@@ -31848,9 +31856,9 @@ video {
   color: #718096;
 }
 
-/* body {
+body {
   font-family: "Roboto", sans-serif;
-} */
+}
 
 /* .entry-content {
   h1 {
@@ -31900,9 +31908,12 @@ html {
   background: linear-gradient(242.73deg, #542aa5 0%, #9f14d0 100.66%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
-  font-size: 120px;
-  line-height: 109px;
+  /* @apply text-2xl; */
 }
 
 h2 {
@@ -31974,16 +31985,29 @@ h3 {
   transition-duration: 500ms;
 }
 
-@media (min-width: 480px) {
+.fade {
+  opacity: 1;
+}
+
+.entry-content.entry-content-not-custom p {
+  padding-bottom: 0.75rem;
+}
+
+.entry-content.entry-content-not-custom h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
   .sm\:container {
     width: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 640px) {
     .sm\:container {
-      max-width: 480px;
+      max-width: 640px;
       padding-right: 2rem;
       padding-left: 2rem;
     }
@@ -43193,9 +43217,12 @@ h3 {
     font-size: 36px;
   }
 
+  .sm\:text-1xl {
+    font-size: 79px;
+  }
+
   .sm\:text-2xl {
     font-size: 120px;
-    line-height: 109px;
   }
 
   .sm\:leading-3 {
@@ -45625,7 +45652,7 @@ h3 {
   }
 
   .sm\:max-w-screen-sm {
-    max-width: 480px;
+    max-width: 640px;
   }
 
   .sm\:max-w-screen-md {
@@ -63005,9 +63032,9 @@ h3 {
     padding-left: 1rem;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 640px) {
     .md\:container {
-      max-width: 480px;
+      max-width: 640px;
       padding-right: 2rem;
       padding-left: 2rem;
     }
@@ -74217,9 +74244,12 @@ h3 {
     font-size: 36px;
   }
 
+  .md\:text-1xl {
+    font-size: 79px;
+  }
+
   .md\:text-2xl {
     font-size: 120px;
-    line-height: 109px;
   }
 
   .md\:leading-3 {
@@ -76649,7 +76679,7 @@ h3 {
   }
 
   .md\:max-w-screen-sm {
-    max-width: 480px;
+    max-width: 640px;
   }
 
   .md\:max-w-screen-md {
@@ -94029,9 +94059,9 @@ h3 {
     padding-left: 1rem;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 640px) {
     .lg\:container {
-      max-width: 480px;
+      max-width: 640px;
       padding-right: 2rem;
       padding-left: 2rem;
     }
@@ -105241,9 +105271,12 @@ h3 {
     font-size: 36px;
   }
 
+  .lg\:text-1xl {
+    font-size: 79px;
+  }
+
   .lg\:text-2xl {
     font-size: 120px;
-    line-height: 109px;
   }
 
   .lg\:leading-3 {
@@ -107673,7 +107706,7 @@ h3 {
   }
 
   .lg\:max-w-screen-sm {
-    max-width: 480px;
+    max-width: 640px;
   }
 
   .lg\:max-w-screen-md {
@@ -125053,9 +125086,9 @@ h3 {
     padding-left: 1rem;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 640px) {
     .xl\:container {
-      max-width: 480px;
+      max-width: 640px;
       padding-right: 2rem;
       padding-left: 2rem;
     }
@@ -136265,9 +136298,12 @@ h3 {
     font-size: 36px;
   }
 
+  .xl\:text-1xl {
+    font-size: 79px;
+  }
+
   .xl\:text-2xl {
     font-size: 120px;
-    line-height: 109px;
   }
 
   .xl\:leading-3 {
@@ -138697,7 +138733,7 @@ h3 {
   }
 
   .xl\:max-w-screen-sm {
-    max-width: 480px;
+    max-width: 640px;
   }
 
   .xl\:max-w-screen-md {

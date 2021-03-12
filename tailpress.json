@@ -20,9 +20,11 @@
     "base": ["18px"],
     "lg": ["18px"],
     "xl": ["36px"],
-    "2xl": ["120px", "109px"]
+    "1xl": ["79px"],
+    "2xl": ["120px"]
+
   },
   "fontFamily": {
-    "sans": ["Roboto", "sans-serif"]
+    "sans": "Roboto, sans-serif"
   }
 }

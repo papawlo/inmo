@@ -12,6 +12,11 @@
 
 ?>
 
-<?php
-the_content();
-?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="container">
+	<div class="entry-content entry-content-home">
+		<?php
+		the_content();
+		?>
+	</div><!-- .entry-content -->
+
+</article><!-- #post-<?php the_ID(); ?> -->
