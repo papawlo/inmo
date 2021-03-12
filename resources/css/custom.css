@@ -58,26 +58,6 @@ h2 {
 h3 {
   @apply text-lg;
 }
-.text-js {
-  opacity: 0;
-}
-.cursor {
-  display: block;
-  position: absolute;
-  height: 50%;
-  top: 0;
-  right: -5px;
-  width: 2px;
-  /* Change colour of Cursor Here */
-  background-color: white;
-  z-index: 1;
-  animation: flash 0.5s none infinite alternate;
-}
-@keyframes flash {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.inicio-btn-primary {
+	@apply bg-white px-12 py-8 rounded-full text-primary mt-6 border-none focus:ring-4 focus:ring-purple-500 focus:outline-none text-base transform hover:scale-110 transition duration-500 ease-in-out hover:shadow-lg uppercase;
 }

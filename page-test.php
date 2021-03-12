@@ -13,7 +13,6 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
     <?php wp_head(); ?>
 </head>
 
@@ -59,7 +58,7 @@
                 wp_nav_menu(
                     array(
                         'container_id'    => 'primary-menu',
-                        'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+                        'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
                         'menu_class'      => 'lg:flex lg:-mx-4',
                         'theme_location'  => 'primary',
                         'li_class'        => 'lg:mx-4 text-nav-gray',

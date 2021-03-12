@@ -31360,42 +31360,65 @@ h3 {
   font-size: 18px;
 }
 
-.text-js {
-  opacity: 0;
+.inicio-btn-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 9999px;
+  border-style: none;
+  font-size: 18px;
+  margin-top: 1.5rem;
 }
 
-.cursor {
-  display: block;
-  position: absolute;
-  height: 50%;
-  top: 0;
-  right: -5px;
-  width: 2px;
-  /* Change colour of Cursor Here */
-  background-color: white;
-  z-index: 1;
-  -webkit-animation: flash 0.5s none infinite alternate;
-          animation: flash 0.5s none infinite alternate;
+.inicio-btn-primary:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-@-webkit-keyframes flash {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+.inicio-btn-primary {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
-@keyframes flash {
-  0% {
-    opacity: 1;
-  }
+.inicio-btn-primary:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 
-  100% {
-    opacity: 0;
-  }
+.inicio-btn-primary:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(4px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(139, 92, 246, var(--tw-ring-opacity));
+}
+
+.inicio-btn-primary {
+  --tw-text-opacity: 1;
+  color: rgba(159, 20, 208, var(--tw-text-opacity));
+  text-transform: uppercase;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.inicio-btn-primary:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+}
+
+.inicio-btn-primary {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
 .block-editor__typewriter {
@@ -31412,6 +31435,25 @@ h3 {
 
 .wp-block[data-align="full"] {
   max-width: 100%;
+}
+
+.block-editor-block-list__layout ul {
+  list-style: none;
+}
+
+.inicio-btn-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 9999px;
+  border-style: none;
+  margin-top: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  --tw-text-opacity: 1;
+  color: rgba(159, 20, 208, var(--tw-text-opacity));
+  text-transform: uppercase;
 }
 
 @media (min-width: 480px) {

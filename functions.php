@@ -134,6 +134,7 @@ function tailpress_setup()
 	// echo "-->";
 	add_theme_support('editor-color-palette', $colors);
 	add_theme_support('editor-font-sizes', $font_sizes);
+	add_theme_support( 'custom-units','px', 'rem', 'em' );
 
 	/**
 	 * Add support for custom color palettes in Gutenberg.
@@ -154,6 +155,10 @@ function tailpress_setup()
 	// 		)
 	// 	)
 	// );
+
+
+	remove_filter('the_content', 'wpautop');
+	remove_filter('the_excerpt', 'wpautop');
 }
 
 add_action('after_setup_theme', 'tailpress_setup');
@@ -252,6 +257,35 @@ function disable_autosave()
 {
 	wp_deregister_script('autosave');
 }
+function dequeue_jquery_migrate( $scripts ) {
+    if (  is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff(
+            $scripts->registered['jquery']->deps,
+            [ 'jquery-migrate' ]
+        );
+    }
+}
+add_action( 'wp_default_scripts', 'dequeue_jquery_migrate' );
 
 
-remove_filter('the_content', 'wpautop');
+//==============================================================
+//Shortcode to Display Menus
+//==============================================================
+
+function inmo_menu_shortcode($attr){
+
+    $args = shortcode_atts(array('name'  => '' ), $attr);
+
+    return wp_nav_menu(
+			array(
+				'menu'             => $args['name'],
+				// 'container_id'    => 'primary-menu',
+				'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+				'menu_class'      => 'lg:flex lg:-mx-4',
+				'theme_location'  => 'primary',
+				'li_class'        => 'lg:mx-4',
+				'fallback_cb'     => false,
+		)
+		);
+}
+add_shortcode('addmenu', 'inmo_menu_shortcode');

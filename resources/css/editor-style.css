@@ -18,3 +18,9 @@
 .wp-block[data-align="full"] {
   @apply max-w-full;
 }
+.block-editor-block-list__layout ul {
+  list-style: none;
+}
+.inicio-btn-primary {
+  @apply bg-white py-8 px-12 rounded-full text-primary mt-6 border-none uppercase;
+}
